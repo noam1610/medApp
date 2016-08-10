@@ -1,0 +1,131 @@
+<div>
+    <h1 align="center"> Welcome Doc' </br>
+    </h1>
+    <div class="container-fluid" ng-hide="vm.edit">
+        <div class="imageBig img-square col-md-3" style="background-color: #5bc0de;" align="center">
+            <h4>Last visit:</h4>
+            <h3>{{vm.myprofile.exp}} </h3>
+            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+            <h3>{{vm.myprofile.numberPatient + ' ' +'patients'}} </h3>
+        </div>
+
+        <div class="col-md-9">
+            <div class="panel panel-default">
+                <div class="panel-heading">Your Profile
+                    <button type="button" class="btn btn-default navbar-right" ng-click="vm.edit = true" aria-label="Left Align">
+                        Edit your profile
+                        <span class="glyphicon glyphicon-align-right" aria-hidden="true"></span>
+                    </button>
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"> Email</span>
+                        <h3>{{vm.myprofile.displayName}} </h3>
+                    </li>
+                    <li class="list-group-item">
+                        <span class="glyphicon glyphicon-envelope" aria-hidden="true"> Email</span>
+                        <h3>{{vm.myprofile.email}} </h3>
+                    </li>
+                    <li class="list-group-item">
+                        <span class="glyphicon glyphicon-globe" aria-hidden="true"> Country </span>
+                        <h3>{{vm.myprofile.googleData.locale}} </h3>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-2">
+                <button type="submit" ui-sref="search" class="btn btn-primary btn-block btn-lg">
+                    Search patient
+                </button>
+            </div>
+            <div class="col-md-2">
+                <button type="submit" ui-sref="create" class="btn btn-primary btn-block btn-lg">
+                    Create Patient
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container-fluid" ng-show="vm.edit">
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6">
+                <form class="form-horizontal" style="padding-top: 2em; font-size: 1.2em;">
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">FirstName</label>
+                        <div class="col-md-8">
+                            <input type="text" ng-model="vm.update.firstName" class="form-control" placeholder="FirstName">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">LastName</label>
+                        <div class="col-md-8">
+                            <input type="text" ng-model="vm.update.lastName" class="form-control" placeholder="LastName">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Birth Date</label>
+                        <p class="input-group col-md-8">
+                            <input type="date" class="form-control" ng-model="vm.update.birthDate" datepicker-popup ng-model="dt" is-open="status.opened" min-date="minDate" max-date="'2020-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                        </p>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">email</label>
+                        <div class="col-md-8">
+                            <input type="text" ng-model="vm.update.email" class="form-control" placeholder="{{vm.myprofile.email}}">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">phone</label>
+                        <div class="col-md-8">
+                            <input type="text" ng-model="vm.update.phone" class="form-control" placeholder="{{vm.myprofile.phone}}">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">adress</label>
+                        <div class="col-md-8">
+                            <input type="text" ng-model="vm.update.adress" class="form-control" placeholder="adress">
+                        </div>
+                    </div>
+
+                    <accordion class="col-md-8">
+                        <strong> Medical Fields</strong>
+                        <div ng-repeat="field in vm.fields">
+                            <accordion-group heading="Dynamic Body Content">
+                                <p>The body of the accordion group grows to fit the contents</p>
+                                <div class="input-group">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" ng-click="vm.addElement(field)" type="button">Add diagnostisis</button>
+                                    </span>
+                                    <input type="text" ng-model="vm.diagnostic" class="form-control" placeholder="Search for...">
+                                </div>
+                                <div ng-repeat="Element in field.Elements">{{Element}}</div>
+                            </accordion-group>
+                        </div>
+                        <button ng-click="vm.addFiled()"> Add Field </button>
+                    </accordion>
+
+                    <!-- <div class="col-md-2"> -->
+                    <button type="submit" ng-click="vm.save()" class="btn btn-primary btn-block btn-lg">
+                        Save
+                    </button>
+                </form>
+            </div>
+            <div class="col-md-3">
+            </div>
+        </div>
+    </div>
+</div>

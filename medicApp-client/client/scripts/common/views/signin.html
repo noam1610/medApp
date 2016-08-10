@@ -1,0 +1,81 @@
+<div>
+    <h1 align="center"> Please sign in Doc' </br>
+    </h1>
+
+    <div class="row">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-6">
+            <button type="submit" ng-click="vm.authenticate(provider.name)" class="btn btn-primary btn-block btn-lg">
+                Sign In With Google
+            </button>
+        </div>
+        <div class="col-md-3">
+        </div>
+    </div>
+    <!-- <div class="row">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-6">
+            <form class="form-horizontal" style="padding-top: 2em; font-size: 1.2em;">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">FirstName</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" placeholder="FirstName">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">LastName</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" placeholder="LastName">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Birth Date</label>
+                    <p class="input-group col-md-8">
+                        <input type="date" class="form-control" datepicker-popup ng-model="dt" is-open="status.opened" min-date="minDate" max-date="'2020-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </p>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label">email</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" placeholder="email">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label">phone</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" placeholder="phone">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label">adress</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" placeholder="adress">
+                    </div>
+                </div>
+                <div class="col-md-2"> 
+                <button type="submit" ui-sref="profile" class="btn btn-primary btn-block btn-lg">
+                    SignIn
+                </button>
+            </form>
+
+        </div>
+
+        <div class="col-md-3">
+        </div>
+
+    </div>
+
+    <button ng-repeat="provider in vm.providers" ng-click="vm.authenticate(provider.name)" class="button icon-left icon-button ion-social-{{provider.name}} button-block" style="background-color: {{provider.buttonColor}}; color: {{provider.textColor}}; {{provider.fontStyle}}">
+        {{provider.textLong}}
+    </button>
+ -->
+</div>

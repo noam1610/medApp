@@ -1,0 +1,43 @@
+<div>
+    <h1 align="center"> Medic'air </br>
+        <small>All you need as a doctor</small>
+    </h1>
+    <div class="container-fluid">
+        <div style="background-color: #5bc0de; padding: 5em;" class="row">
+            <div class="imageBig col-md-3" align="center">
+                <span class="glyphicon glyphicon-search " aria-hidden="true"></span>
+                <h3>Quickly find your patient </h3>
+            </div>
+            <div class="imageBig col-md-3" align="center">
+                <span class="glyphicon  glyphicon-globe " aria-hidden="true"></span>
+                <h3> Access your data</h3>
+            </div>
+            <div class="imageBig col-md-3" align="center">
+                <span class="glyphicon glyphicon-edit " aria-hidden="true"></span>
+                <h3>Manage your patients</h3>
+            </div>
+            <div class="imageBig col-md-3" align="center">
+                <span class="glyphicon glyphicon-file " aria-hidden="true"></span>
+                <h3> Edit prescription</h3>
+            </div>
+        </div>
+    </div>
+
+    <div style="padding-top: 2em;"></div>
+    <div class="row">
+        <div class="col-md-5">
+        </div>
+        <div class="col-md-2">
+            <button ng-repeat="provider in vm.providers" ng-click="vm.authenticate(provider.name)" class="button icon-left icon-button ion-social-{{provider.name}} button-block" style="background-color: {{provider.buttonColor}}; color: {{provider.textColor}}; {{provider.fontStyle}}">
+                {{provider.textLong}}
+            </button>
+        </div>
+        <div class="col-md-5">
+        </div>
+    </div>
+
+    <button ng-repeat="provider in vm.providers" ng-click="vm.enter(provider.name)" class="button icon-left icon-button ion-social-{{provider.name}} button-block" style="background-color: {{provider.buttonColor}}; color: {{provider.textColor}}; {{provider.fontStyle}}">
+                Enter
+    </button>
+
+</div>

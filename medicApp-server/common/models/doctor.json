@@ -1,0 +1,53 @@
+{
+    "name": "Doctor",
+    "base": "PersistedModel",
+    "idInjection": true,
+    "options": {
+        "validateUpsert": true
+    },
+    "properties": {
+        "email": {
+            "type": "string",
+            "index": true
+        },
+        "name": {
+            "type": "string",
+            "index": true
+        },
+        "country": {
+            "type": "string",
+            "index": true
+        },
+        "adress": {
+            "type": "string",
+            "index": true
+        },
+        "specialisation": {
+            "type": "string",
+            "index": true
+        },
+        "fields": {
+            "type": ["object"],
+            "index": true
+        }
+    },
+    "validations": [],
+    "relations": {},
+    "acls": [{
+        "accessType": "*",
+        "principalType": "ROLE",
+        "principalId": "$everyone",
+        "permission": "ALLOW"
+    }, {
+        "accessType": "*",
+        "principalType": "ROLE",
+        "principalId": "$owner",
+        "permission": "ALLOW"
+    }, {
+        "accessType": "*",
+        "principalType": "ROLE",
+        "principalId": "$everyone",
+        "permission": "ALLOW"
+    }],
+    "methods": []
+}
